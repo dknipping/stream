@@ -12,8 +12,8 @@ import com.ted.stream.mongo.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService {
 
-	@Autowired
-	private UserRepository repository;
+    @Autowired
+    private UserRepository repository;
 
     @Override
     public User login(String username, String password) {
@@ -53,5 +53,5 @@ public class UserServiceImpl implements UserService {
     public User findUserById(String id) {
         return repository.findUserById(id);
     }
-	
+
 }

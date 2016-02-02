@@ -63,7 +63,7 @@ public class MessageServiceTest {
         Message createdMessage = messageService.createMessage(message);
         assertNotNull(createdMessage);
         
-        List<Message> findMessagebyUserUsername = messageService.findMessagebyUserUsername("hmueller");
+        List<Message> findMessagebyUserUsername = messageService.findMessageByUserUsername("hmueller");
         assertEquals(1, findMessagebyUserUsername.size());
         
         List<Message> findMessageByCategoryName = messageService.findMessageByCategoryName("Sport");
@@ -108,7 +108,7 @@ public class MessageServiceTest {
         Message createdMessage = messageService.createMessage(message);
         assertNotNull(createdMessage);
         
-        List<Message> messages = messageService.findMessagebyUserUsername("hmueller");
+        List<Message> messages = messageService.findMessageByUserUsername("hmueller");
         List<Comment> comments = messages.get(0).getComments();
         assertTrue(comments instanceof LazyLoadingProxy);
         assertEquals(1, comments.size());

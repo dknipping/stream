@@ -21,6 +21,7 @@ public class User implements Serializable {
 	private String firstName;
 	private String lastName;
 	private String password;
+	private String profilePictureUrl;
 	
 	public User() {
 	}
@@ -63,6 +64,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProfilePictureUrl() {
+        return profilePictureUrl;
+    }
+
+    public void setProfilePictureUrl(String profilePictureUrl) {
+        this.profilePictureUrl = profilePictureUrl;
     }
 	
 }

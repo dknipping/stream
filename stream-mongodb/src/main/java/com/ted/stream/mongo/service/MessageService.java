@@ -9,8 +9,9 @@ public interface MessageService {
     Message createMessage(Message message);
     Message updateMessage(Message message);
     void deleteMessage(String id);
+    Message findMessageById(String id);
     List<Message> findMessageByCategoryName(String name);
-    List<Message> findMessagebyUserUsername(String username);
+    List<Message> findMessageByUserUsername(String username);
     List<Message> findAll();
     void removeAll();
 }

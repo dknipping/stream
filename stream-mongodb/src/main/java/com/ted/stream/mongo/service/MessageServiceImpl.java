@@ -40,12 +40,17 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
-    public List<Message> findMessagebyUserUsername(String username) {
+    public List<Message> findMessageByUserUsername(String username) {
         return messageRepository.findMessageByUserUsername(username);
     }
 
     @Override
     public void removeAll() {
         messageRepository.deleteAll();
+    }
+
+    @Override
+    public Message findMessageById(String id) {
+        return messageRepository.findOne(id);
     }
 }

@@ -23,8 +23,8 @@ public class Application {
     }
 
     private ApiInfo createApiInfo() {
-        final ApiInfo apiInfo = new ApiInfo("Reservation API", "This is the API for using the reservation tool", "1.0", "#/termsOfServiceUrl.html",
-            "PRODYNA AG", "License", "#/licenseUrl.html");
+        final ApiInfo apiInfo = new ApiInfo("TED Stream API", "This is the API for TED Stream", "1.0", "#/termsOfServiceUrl.html",
+            "TED", "License", "#/licenseUrl.html");
         return apiInfo;
     }
 }

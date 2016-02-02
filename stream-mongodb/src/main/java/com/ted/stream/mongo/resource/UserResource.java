@@ -41,7 +41,7 @@ public class UserResource {
     }
     
     @RequestMapping(value = "/users/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<User> updateUser(@PathVariable User user) {
+    public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody User user) {
         return ResponseEntity.ok(userService.updateUser(user));
     }
     

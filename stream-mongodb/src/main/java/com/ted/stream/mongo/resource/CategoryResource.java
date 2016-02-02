@@ -41,7 +41,7 @@ public class CategoryResource {
     }
     
     @RequestMapping(value = "/categories/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Category> updateCategory(@PathVariable Category category) {
+    public ResponseEntity<Category> updateCategory(@PathVariable String id, @RequestBody Category category) {
         return ResponseEntity.ok(categoryService.updateCategory(category));
     }
     

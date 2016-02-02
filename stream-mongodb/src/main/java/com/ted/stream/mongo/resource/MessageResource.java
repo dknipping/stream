@@ -47,7 +47,7 @@ public class MessageResource {
     }
     
     @RequestMapping(value = "/messages/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Message> updateMessage(@PathVariable Message Message) {
+    public ResponseEntity<Message> updateMessage(@PathVariable String id, @RequestBody Message Message) {
         return ResponseEntity.ok(messageService.updateMessage(Message));
     }
     

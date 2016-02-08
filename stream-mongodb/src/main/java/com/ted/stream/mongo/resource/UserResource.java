@@ -48,6 +48,6 @@ public class UserResource {
     @RequestMapping(value = "/users/{id}", method = RequestMethod.DELETE)
     public Object deleteUser(@PathVariable String id) {
         userService.deleteUser(id);
-        return ResponseEntity.noContent();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

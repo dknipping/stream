@@ -48,6 +48,6 @@ public class CategoryResource {
     @RequestMapping(value = "/categories/{id}", method = RequestMethod.DELETE)
     public Object deleteCategory(@PathVariable String id) {
         categoryService.deleteCategory(id);
-        return ResponseEntity.noContent();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

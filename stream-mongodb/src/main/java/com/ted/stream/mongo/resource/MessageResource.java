@@ -54,6 +54,6 @@ public class MessageResource {
     @RequestMapping(value = "/messages/{id}", method = RequestMethod.DELETE)
     public Object deleteMessage(@PathVariable String id) {
         messageService.deleteMessage(id);
-        return ResponseEntity.noContent();
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 }

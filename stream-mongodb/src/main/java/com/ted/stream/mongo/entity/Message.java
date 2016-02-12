@@ -9,6 +9,11 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.ted.stream.mongo.jackson.LocalDateTimeDeserializer;
+import com.ted.stream.mongo.jackson.LocalDateTimeSerializer;
+
 @Document
 public class Message implements Serializable {
 
@@ -19,13 +24,17 @@ public class Message implements Serializable {
     
     private String text;
     
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime postDate;
     
+    @DBRef
     private Category category;
     
+    @DBRef
     private User user;
 
-    @DBRef(lazy = true)
+    @DBRef
     private List<Comment> comments = new ArrayList<>();
     
     public String getId() {

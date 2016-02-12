@@ -6,6 +6,11 @@ import java.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.ted.stream.mongo.jackson.LocalDateTimeDeserializer;
+import com.ted.stream.mongo.jackson.LocalDateTimeSerializer;
+
 @Document
 public class Comment implements Serializable {
 
@@ -16,6 +21,8 @@ public class Comment implements Serializable {
 
     private String comment;
     
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime commentDate;
     
     private User user;
